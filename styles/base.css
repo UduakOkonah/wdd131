@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    
+    --primary-color:#D1CA98;
+    ---secondary-color:#FFB140;
+    --accent1-color:#EDBF85;
+    --accent2-color:#B7B3A1;
+
+    --heading-font:'Noto Serif', Serif;
+    --paragraph-font:'Roboto', Serif;
+
+    --nav-background-color:#FFB140;
+    --nav-link-color: #4ABEEC;
+    --nav-hover-link-color:#6209F0;
+    --nav-hover-background-color:#F7F06D; 
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+    font-family: "Sansita", sans-serif;
+}
+
+header {
+	background-color: var(--primary-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+header,
+main {
+	margin: 0 auto;
+}
+
+nav {
+    background-color: var(---secondary-color);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40px;
+}
+
+nav a {
+    color: white;
+    display: block;
+    padding: 0.7rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+h1 {
+    margin: 0 auto;
+    color: white;
+    font-size: 1.5rem;
+}
+
+body{
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+img {
+    width: 150px;
+    height: auto;
+    border: 1px solid --accent1-color;
+    padding: 2px;
+    box-shadow: 0 0 30px gray;
+}
+
+main{
+    max-width: 900px;
+    display: grid;
+    align-items: center;
+    grid-template: auto  auto  auto;
+    background-color: var(--accent1-color);
+    border: 1px solid --accent1-color;
+    padding: 10px;
+}
+
+
+p {
+    padding: 10px;
+}
+
+main img {
+    width: 150px;
+    height: auto;
+    float: right;
+}
+
+h2{
+    background-color: var(--accent2-color);
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    font-family: var(--heading-font);
+}
+
+.flag{
+    float: left;
+}
+
+
+p {
+    padding: 0;
+}
+
+.modern{
+    flex: 1 1 100%;
+}
+
+.card{
+    background: white;
+    grid-column: 1/2;
+    /* padding: 10px; */
+    border-radius: 5px;
+}
+
+nav a:hover {
+	text-decoration:underline;
+    color: var(--nav-hover-link-color);
+    background-color: var(--nav-hover-background-color);
+    
+}
+
+div{
+    grid-column: 2/2;
+    padding:0;
+    background: white;
+    border-radius: 5px;
+    position: relative;
+    left: 5px;
+    /* grid-row: 1/1; */
+}
+
+ul {
+    height: 330px;
+    position: relative;
+    left: 50px;
+}
+
+h3{
+    text-align: center;
+}
+/* 
+h2{
+     display: block; 
+} */
+
+footer{
+    background: var(--primary-color);
+    grid-column: 1/2;
+    height: 90px;
+    text-align: center;
+    color: #eee;
+    padding: 30px;
+} 

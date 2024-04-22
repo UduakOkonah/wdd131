@@ -2,7 +2,6 @@
 body{
     display: grid;
     grid-template: auto  auto  auto;
-
 }
 
 header{
@@ -44,8 +43,6 @@ main{
     padding: 8rem;
     text-decoration: none;
     text-align: center;
-
-
 }
 
 aside{
