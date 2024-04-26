@@ -28,10 +28,8 @@ body{
 
 header {
 	background-color: var(--primary-color);
-	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 20px;
 	border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -56,17 +54,20 @@ nav a {
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 700;
+
 }
 
 h1 {
     margin: 0 auto;
     color: white;
     font-size: 1.5rem;
+    text-align: center;
 }
 
 body{
     max-width: 900px;
     margin: 0 auto;
+    /* border-radius: 10px; */
 }
 
 img {
@@ -102,7 +103,7 @@ h2{
     background-color: var(--accent2-color);
     color: white;
     text-align: center;
-    border-radius: 5px;
+    /* border-radius: px; */
     font-family: var(--heading-font);
 }
 
@@ -140,6 +141,8 @@ div{
     border-radius: 5px;
     position: relative;
     left: 5px;
+    margin:1rem;
+    margin
     /* grid-row: 1/1; */
 }
 
