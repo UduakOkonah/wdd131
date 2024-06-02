@@ -1,0 +1,39 @@
+/* Larger Views ******************************/
+@media (min-width: 740px) {
+
+	body{
+		max-width: 900px;
+		margin: 0 auto;
+	}
+    
+	header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	
+	nav {
+		justify-content: flex-end;
+		flex-direction: row;
+		height: 40px;
+
+	}
+	nav a {
+		flex: 1 1 100%;
+	}
+
+	.figcaption{
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-gap: 35px;
+		place-items: center;
+	}
+
+	img{ 
+		width: 90%; 
+		height: 100%;
+		margin: 0;
+	}
+
+    
+}

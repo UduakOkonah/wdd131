@@ -1,7 +1,7 @@
 
 body{
     display: grid;
-    grid-template: auto  auto  auto;
+    /* grid-template: auto  auto  auto; */
 }
 
 header{
