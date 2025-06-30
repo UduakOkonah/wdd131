@@ -37,6 +37,14 @@ main {
 	margin: 0 auto;
 }
 
+#course-title {
+    display: block;
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 1rem;
+}
+
 
 nav {
     background-color: var(--secondary-color);
@@ -65,11 +73,11 @@ nav a:hover {
 
 h1 {
     margin: 0 auto;
-    color: #fff;
+    color: var(--primary-color);
     font-size: 2rem;
     text-align: center;
     font-family: var(--heading-font);
-
+    padding: 1rem 0;
 }
 
 body{
@@ -90,7 +98,7 @@ main{
     display: grid;
     align-items: center;
     gap: 1rem;
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 1rem;
 }
 
@@ -106,10 +114,10 @@ main img {
 
 h2{
     background-color: var(--accent2-color);
-    color: fff;
+    color: #fff;
     text-align: center;
     border-radius:5px;
-    font-family: var(--heading-font);
+    font-family:'Noto Serif', serif;;
     font-size: 1.3rem;
     padding: 0.5rem;
 }
@@ -159,7 +167,7 @@ ul {
 }
 
 h3{
-    font-family: var(--heading-font);
+    font-family: 'Noto Serif', serif;
     text-align: center;
 }
 
