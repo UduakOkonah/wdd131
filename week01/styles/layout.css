@@ -1,7 +1,14 @@
 
-body{
-    display: grid;
-
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  min-height: 100vh;
+  padding: 1rem;
 }
 
 header{
@@ -12,15 +19,34 @@ header{
     padding: 10px;
 }
 
-nav{
-    background: wheat;
-    grid-column: 1/4;
-    height: 30px;
+/* Navigation Container */
+nav.navigation.modern {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  gap: 5rem;
+  flex-wrap: wrap; 
 }
 
-.modern{
-    flex: 1 1 100%;
+/* Navigation Links */
+nav.navigation.modern a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
 }
+
+/* Hover & Focus State */
+nav.navigation.modern a:hover,
+nav.navigation.modern a:focus {
+  background-color: #1e204a;
+  color: #ffffff;
+}
+
 
 main{
     background: rgb(12, 151, 197);
@@ -29,27 +55,15 @@ main{
     padding: 10px;
 }
 
-.navigation{
-    list-style: none;
-    display: flex;
-    align-items: center;
-}
-
-.navigation a{
-    display: block;
-    color: #181717;
-    padding: 8rem;
-    text-decoration: none;
-    text-align: center;
-}
 
 aside{
 
     grid-column: 3/4;
     height: 400px;
-    color: #f1f3f5;
+    color: #292a2b;
     padding: 10px;
 }
+
 footer{
     background:  #1a1a1a;
     grid-column: 1/4;
