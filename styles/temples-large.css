@@ -1,0 +1,33 @@
+@media (min-width: 740px) {
+  #menu {
+    display: none;
+  }
+
+  .navigation {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .navigation a {
+    flex: 1 1 auto;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+  .figcaption {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    place-items: center;
+  }
+
+  figure img {
+    width: 90%;
+    height: auto;
+  }
+}
