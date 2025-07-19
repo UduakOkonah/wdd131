@@ -1,0 +1,128 @@
+/* place.css */
+
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  padding: 1rem;
+  background-color: #0b6623; /* Nigeria green */
+  color: white;
+}
+
+main {
+  position: relative;
+  min-height: 90vh;
+  overflow: hidden;
+}
+
+.hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero picture,
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.data {
+  position: absolute;
+  top: 2rem;
+  left: 2rem; 
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #fff; /* Nigeria green */
+  padding-bottom: 0.5rem;
+  background-color: #0b6623; /* Nigeria green */
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.data ul {
+  list-style: none;
+}
+
+.data li {
+  margin-bottom: 0.5rem;
+}
+
+#weather {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem; /* Changed from left to right */
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#weather p {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.icon-mobile {
+  display: none;
+}
+
+.icon-wide {
+  display: inline;
+  font-size: 1.2rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #0b6623;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .data,
+  #weather {
+    position: static;
+    width: 100%;
+    margin: 1rem auto;
+  }
+
+  .hero {
+    position: static;
+    height: auto;
+  }
+
+    .icon-mobile {
+    display: inline;
+  }
+
+  .icon-wide {
+    display: none;
+  }
+}

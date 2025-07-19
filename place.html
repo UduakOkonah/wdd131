@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Uduakobong Okonah" />
+  <meta name="description" content="Information and weather about Nigeria including responsive imagery and live weather calculations." />
+  <title>Nigeria</title>
+  <link rel="stylesheet" href="styles/place.css" />
+  <script src="scripts/place.js" defer></script>
+  <script src="scripts/weather.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Nigeria</h1>
+  </header>
+
+  <main>
+    <section class="hero">
+      <picture>
+        <source srcset="images/place-lg.webp" media="(min-width: 768px)">
+       <img src="images/place-sm.webp" alt="The Aba Nigeria Temple, a sacred building of The Church of Jesus Christ of Latter-day Saints"
+        width="1160" height="768" />
+      </picture>
+    </section>
+
+    <section class="data">
+      <h2>Data</h2>
+      <ul>
+        <li><strong>Area:</strong> 923,769 sq km</li>
+        <li><strong>Population:</strong> 223,804,632</li>
+        <li><strong>Capital:</strong> Abuja</li>
+        <li><strong>Languages:</strong> English, Hausa, Yoruba, Igbo</li>
+        <li><strong>Currency:</strong> Nigerian Naira (₦)</li>
+        <li><strong>Time Zone:</strong> UTC+1</li>
+        <li><strong>Calling Code:</strong> +234</li>
+        <li><strong>Internet TLD:</strong> .ng</li>
+      </ul>
+    </section>
+
+    <div id="weather">
+    <h2>Weather <span class="icon-mobile"><img src="images/weather-icon.svg" alt="Weather icon" width="24" height="24" /></span><span class="icon-wide">⛅</span></h2>
+    <p>Temperature: <span id="temp">40 °F</span></p>
+    <p>Wind Speed: <span id="speed">10 mph</span></p>
+    <p>Wind Chill: <span id="windchill"></span></p>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy;<span id="year"></span> 🌸 Uduakobong Okonah 🌸 Nigeria</p>
+    <p>Last Modification: <span id="lastModified"></span></p>
+  </footer>
+</body>
+</html>
