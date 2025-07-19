@@ -1,4 +1,7 @@
-/* place.css */
+:root {
+  --primary-color: #0b6623; /* Nigeria green */
+  --accent-color: #ffffff; /* white */
+}
 
 /* Base Reset */
 * {
@@ -17,8 +20,8 @@ body {
 header {
   text-align: center;
   padding: 1rem;
-  background-color: #0b6623; /* Nigeria green */
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--accent-color);
 }
 
 main {
@@ -46,7 +49,7 @@ main {
 .data {
   position: absolute;
   top: 2rem;
-  left: 2rem; 
+  left: 2rem;
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 0.5rem;
   padding: 1rem;
@@ -55,14 +58,23 @@ main {
 }
 
 h2 {
-  color: #fff; /* Nigeria green */
+  color: var(--accent-color);
   padding-bottom: 0.5rem;
-  background-color: #0b6623; /* Nigeria green */
+  background-color: var(--primary-color);
   margin-bottom: 1rem;
   font-size: 1.5rem;
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: var(--accent-color);
+  margin: 4px auto 0;
 }
 
 .data ul {
@@ -76,7 +88,7 @@ h2 {
 #weather {
   position: absolute;
   bottom: 2rem;
-  right: 2rem; /* Changed from left to right */
+  right: 2rem;
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 0.5rem;
   padding: 1rem;
@@ -101,8 +113,8 @@ h2 {
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: #0b6623;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--accent-color);
 }
 
 @media (max-width: 768px) {
@@ -118,7 +130,7 @@ footer {
     height: auto;
   }
 
-    .icon-mobile {
+  .icon-mobile {
     display: inline;
   }
 
