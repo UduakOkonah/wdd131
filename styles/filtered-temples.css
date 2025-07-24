@@ -1,0 +1,114 @@
+/* Base Styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+header {
+  background-color: #1f2937;
+  color: #ffffff;
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0.5rem 0;
+}
+
+/* Hamburger Menu Styles */
+#menu-toggle {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #ffffff;
+  cursor: pointer;
+  margin: 0.5rem;
+}
+
+/* Navigation menu (hidden by default on small screens) */
+.navigation {
+  display: none;
+  flex-direction: column;
+  background-color: #1f2937;
+  padding: 1rem;
+}
+
+.navigation a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+}
+
+/* Show menu when toggled */
+.navigation.show {
+  display: flex;
+}
+
+nav.navigation a:hover {
+  background-color: #2563eb;
+}
+
+/* Main */
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+main h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Temple Cards */
+.temples-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.temple-card {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.temple-card:hover {
+  transform: translateY(-4px);
+}
+
+.temple-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.temple-card h3 {
+  margin: 0.75rem;
+  color: #111827;
+}
+
+.temple-card p {
+  margin: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #1f2937;
+  color: white;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+

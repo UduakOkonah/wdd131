@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lazy Loading Demo</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<main>
+  <h1>Lazy Loading Images</h1>
+
+  <!-- 1. Random image -->
+  <img src="https://picsum.photos/400/600" alt="Random Image" loading="lazy" class="lazy-img">
+
+  <!-- 2. Grayscale image -->
+  <img src="https://picsum.photos/400/600?grayscale" alt="Grayscale Image" loading="lazy" class="lazy-img">
+
+  <!-- 3. Blurred image -->
+  <img src="https://picsum.photos/400/600?blur=5" alt="Blurred Image" loading="lazy" class="lazy-img">
+
+  <!-- 4. Seeded image (consistent image every time) -->
+  <img src="https://picsum.photos/seed/book/400/600" alt="Seeded Image of a Book" loading="lazy" class="lazy-img">
+
+  <!-- 5. Grayscale + Blur -->
+  <img src="https://picsum.photos/400/600?grayscale&blur=3" alt="Grayscale and Blurred Image" loading="lazy" class="lazy-img">
+
+  <!-- 6. Seeded themed image -->
+  <img src="https://picsum.photos/seed/technology/400/600" alt="Seeded Technology Image" loading="lazy" class="lazy-img">
+
+</main>
+
+
+  <footer>
+    <p>&copy; 2025 | Lazy Load Demo</p>
+    <p id="lastModified"></p>
+  </footer>
+
+  <script src="scripts/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #f5f5f5;
+}
+
+main {
+  padding: 2rem;
+}
+
+img.lazy-img {
+  display: block;
+  margin: 2rem auto;
+  width: 400px;
+  height: auto;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+}
