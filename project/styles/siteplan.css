@@ -1,0 +1,51 @@
+/* General Layout */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff; /* White background */
+  color: #333333; /* Body text */
+  margin: 20px;
+  line-height: 1.6;
+}
+
+/* Headers */
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  color: #4CAF50; /* Green */
+}
+
+h1 {
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+header p {
+  text-align: center;
+  font-style: italic;
+}
+
+/* Sections */
+section {
+  margin-bottom: 2rem;
+}
+
+/* Lists */
+ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+/* Wireframes */
+.wireframe {
+  max-width: 250px;
+  border: 2px solid #4CAF50;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 30px;
+  color: #555;
+}
