@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Confirmation</title>
+  <link rel="stylesheet" href="styles/form.css">
+  <script>
+    // Increment LocalStorage Counter
+    let reviewCount = localStorage.getItem('reviewCount') || 0;
+    reviewCount++;
+    localStorage.setItem('reviewCount', reviewCount);
+    window.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("reviewCounter").textContent = reviewCount;
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Thank you for your review!</h1>
+  </header>
+
+  <main>
+    <p>Your review has been submitted successfully.</p>
+    <p>You have submitted <strong><span id="reviewCounter"></span></strong> review(s) so far.</p>
+    <a href="form.html">Submit another review</a>
+  </main>
+
+  <footer>
+    <p>&copy;<span id="currentYear"></span>🌸 Uduakobong Lawrence Okonah 🌸 Akwa-bom, Nigeria</p>
+    <p>Last Modification: <span id="lastModified"></span></p>
+  </footer>
+
+<script>
+  // Set the current year
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+  // Set the last modified date
+  document.getElementById("lastModified").textContent = document.lastModified;
+</script>
+</body>
+</html>
