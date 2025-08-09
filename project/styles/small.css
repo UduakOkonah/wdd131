@@ -1,0 +1,153 @@
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Mobile nav menu */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: none;
+    padding: 15px;
+  }
+
+  nav ul.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Sidebar style */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Hidden initially */
+    width: 250px;
+    height: 100%;
+    background: white;
+    box-shadow: -4px 0 12px rgba(0,0,0,0.1);
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: 0.4s ease;
+    z-index: 1000;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .sidebar.open {
+    right: 0; /* Slide in */
+  }
+
+  /* Hide default nav on mobile (use sidebar instead) */
+  header nav:not(.sidebar) {
+    display: none;
+  }
+
+  /* Main sections stacked on mobile */
+  .info-sections {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 15px;
+    margin: 40px auto;
+  }
+
+  .info-sections section {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 20px;
+    width: 100%;
+  }
+
+  /* Order grid mobile style */
+  .order-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .order-grid div {
+    flex: 1 1 100px;
+    text-align: center;
+  }
+
+  /* Form full width on mobile */
+  #contactForm {
+    width: 70%;
+    align-items: stretch; 
+  }
+
+  #contactForm button {
+    align-self: flex-end; 
+    width: auto;
+  }
+
+  /* About section text adjustments for mobile */
+  .about-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .about-text h1,
+  .about-text h2,
+  .about-text h3 {
+    font-size: 1.5rem; /* Adjust heading size for small screens */
+    line-height: 1.2;
+  }
+
+  .about-text p {
+    font-size: 0.9rem; /* More readable on small devices */
+    line-height: 1.5;
+    padding: 0 10px; /* Prevent text from touching screen edges */
+  }
+
+  /* Gallery and images on mobile */
+  .image-row img {
+    width: 45%; /* Final intended value */
+  }
+
+  .gallery h2 {
+    font-size: 2rem;
+  }
+
+  .gallery-item.wide {
+    grid-column: span 1;
+  }
+
+  .gallery-item.tall {
+    grid-row: span 1;
+  }
+
+  /* Footer mobile style */
+  .footer-content {
+    text-align: center;
+  }
+
+  .footer-socials a img {
+    margin: 0 5px;
+  }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunshine Confectionaries - Gallery</title>
+  <link href="styles/base.css" rel="stylesheet">
+    <link href="styles/small.css" rel="stylesheet">
+  <link href="styles/gallery.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="scripts/gallery.js" defer></script>
+  <script src="scripts/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="images/logo.png" alt="Sunshine Confectionaries logo"></div>
+    <nav class="sidebar">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="order.html">Order</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+  </header>
+
+  <main class="gallery-page">
+    <h1>Our Sweet Creations</h1>
+    <p class="subtitle">Click any item to add it to your cart</p>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="addToCart('Chocolate Cake', 20)">
+        <img src="images/gal1.jpg" alt="Chocolate Cake" width="300" height="200" loading="lazy">
+        <div class="overlay"><p>Chocolate Cake - $20</p></div>
+      </div>
+
+      <div class="gallery-item" onclick="addToCart('Vanilla Cupcakes', 15)">
+        <img src="images/gal10.jpg" alt="Vanilla Cupcakes" width="300" height="200" loading="lazy">
+        <div class="overlay"><p>Vanilla Cupcakes - $15</p></div>
+      </div>
+
+      <div class="gallery-item" onclick="addToCart('Strawberry Cake', 25)">
+        <img src="images/gal11.jpg" alt="Strawberry Cake" width="300" height="200" loading="lazy">
+        <div class="overlay"><p>Strawberry Cake - $25</p></div>
+      </div>
+
+      <div class="gallery-item" onclick="addToCart('Event Platter', 50)">
+        <img src="images/gal3.jpg" alt="Event Platter" width="300" height="200" loading="lazy">
+        <div class="overlay"><p>Event Platter - $50</p></div>
+      </div>
+
+      <div class="gallery-item" onclick="addToCart('Event Platter', 50)">
+        <img src="images/gal4.jpg" alt="Event Platter" width="300" height="200" loading="lazy">
+        <div class="overlay"><p>Event Platter - $50</p></div>
+      </div>
+
+      <div class="gallery-item" onclick="addToCart('Event Platter', 50)">
+        <img src="images/gal5.jpg" alt="Event Platter" width="300" height="200" loading="lazy">
+        <div class="overlay"><p>Event Platter - $50</p></div>
+      </div>
+
+      <div class="gallery-item" onclick="addToCart('Event Platter', 50)">
+        <img src="images/gal6.jpg" alt="Event Platter" width="300" height="200" loading="lazy">
+        <div class="overlay"><p>Event Platter - $50</p></div>
+      </div>
+
+      <div class="gallery-item" onclick="addToCart('Event Platter', 50)">
+        <img src="images/gal7.jpg" alt="Event Platter" width="300" height="200" loading="lazy">
+        <div class="overlay"><p>Event Platter - $50</p></div>
+      </div>
+
+      <div class="gallery-item" onclick="addToCart('Event Platter', 50)">
+        <img src="images/gal8.jpg" alt="Event Platter" width="300" height="200" loading="lazy">
+        <div class="overlay"><p>Event Platter - $50</p></div>
+      </div>
+
+      <div class="gallery-item" onclick="addToCart('Event Platter', 50)">
+        <img src="images/gal9.jpg" alt="Event Platter" width="300" height="200" loading="lazy">
+        <div class="overlay"><p>Event Platter - $50</p></div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sunshine Confectionaries | All Rights Reserved</p>
+  </footer>
+</body>
+</html>

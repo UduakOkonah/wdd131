@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunshine Confectionaries - Menu</title>
+  <link href="styles/base.css" rel="stylesheet">
+  <link href="styles/small.css" rel="stylesheet">
+  <link href="styles/menu.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="scripts/script.js" defer></script>
+  <script src="scripts/menu.js" defer></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo"><img src="images/logo.png" alt="Sunshine Confectionaries logo"></div>
+    <nav class="sidebar">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="order.html">Order</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+  </header>
+
+  <!-- Hero -->
+  <section class="menu-hero">
+    <h1>Our Menu</h1>
+    <p>Delicious treats and meals, freshly made for you</p>
+  </section>
+
+  <!-- Category Buttons -->
+  <div class="menu-categories">
+    <button class="active" data-category="all">All</button>
+    <button data-category="cakes">Cakes</button>
+    <button data-category="pastries">Pastries</button>
+    <button data-category="snacks">Snacks</button>
+    <button data-category="drinks">Drinks</button>
+  </div>
+
+  <!-- Menu Grid -->
+  <div class="menu-grid">
+
+    <!-- Cakes -->
+    <div class="menu-item" data-category="cakes" data-name="Chocolate Cake" data-price="15">
+      <img src="images/gal1.jpg" alt="Chocolate Cake" width="300" height="200" loading="lazy">
+      <h3>Chocolate Cake</h3>
+      <p class="price">₦15</p>
+      <input type="number" min="1" value="1" class="qty-input">
+      <button class="btn-add">Add to Cart</button>
+    </div>
+
+    <div class="menu-item" data-category="cakes" data-name="Vanilla Cake" data-price="12">
+      <img src="images/gal3.jpg" alt="Vanilla Cake" width="300" height="200" loading="lazy">
+      <h3>Vanilla Cake</h3>
+      <p class="price">₦12</p>
+      <input type="number" min="1" value="1" class="qty-input">
+      <button class="btn-add">Add to Cart</button>
+    </div>
+
+    <div class="menu-item" data-category="cakes" data-name="Red Velvet Cake" data-price="18">
+      <img src="images/gal6.jpg" alt="Red Velvet Cake" width="300" height="200" loading="lazy">
+      <h3>Red Velvet Cake</h3>
+      <p class="price">₦18</p>
+      <input type="number" min="1" value="1" class="qty-input">
+      <button class="btn-add">Add to Cart</button>
+    </div>
+
+    <!-- Pastries -->
+    <div class="menu-item" data-category="pastries" data-name="Butter Croissant" data-price="7">
+      <img src="images/gal2.jpg" alt="Butter Croissant" width="300" height="200" loading="lazy">
+      <h3>Butter Croissant</h3>
+      <p class="price">₦7</p>
+      <input type="number" min="1" value="1" class="qty-input">
+      <button class="btn-add">Add to Cart</button>
+    </div>
+
+    <div class="menu-item" data-category="pastries" data-name="Assorted Cupcakes" data-price="10">
+      <img src="images/gal11.jpg" alt="Assorted Cupcakes" width="300" height="200" loading="lazy">
+      <h3>Assorted Cupcakes</h3>
+      <p class="price">₦10</p>
+      <input type="number" min="1" value="1" class="qty-input">
+      <button class="btn-add">Add to Cart</button>
+    </div>
+
+    <!-- Snacks -->
+    <div class="menu-item" data-category="snacks" data-name="Golden Chin Chin" data-price="5">
+      <img src="images/gal7.jpg" alt="Golden Chin Chin" width="300" height="200" loading="lazy">
+      <h3>Golden Chin Chin</h3>
+      <p class="price">₦5</p>
+      <input type="number" min="1" value="1" class="qty-input">
+      <button class="btn-add">Add to Cart</button>
+    </div>
+
+    <div class="menu-item" data-category="snacks" data-name="Fresh Meat Pie" data-price="6">
+      <img src="images/gal3.jpg" alt="Fresh Meat Pie" width="300" height="200" loading="lazy">
+      <h3>Fresh Meat Pie</h3>
+      <p class="price">₦6</p>
+      <input type="number" min="1" value="1" class="qty-input">
+      <button class="btn-add">Add to Cart</button>
+    </div>
+
+    <!-- Drinks -->
+    <div class="menu-item" data-category="drinks" data-name="Fruit Smoothie" data-price="8">
+      <img src="images/gal2.jpg" alt="Fruit Smoothie" width="300" height="200" loading="lazy">
+      <h3>Fruit Smoothie</h3>
+      <p class="price">₦8</p>
+      <input type="number" min="1" value="1" class="qty-input">
+      <button class="btn-add">Add to Cart</button>
+    </div>
+
+    <div class="menu-item" data-category="drinks" data-name="Chocolate Milkshake" data-price="9">
+      <img src="images/gal6.jpg" alt="Chocolate Milkshake" width="300" height="200" loading="lazy">
+      <h3>Chocolate Milkshake</h3>
+      <p class="price">₦9</p>
+      <input type="number" min="1" value="1" class="qty-input">
+      <button class="btn-add">Add to Cart</button>
+    </div>
+
+  </div>
+
+  <!-- Cart Section -->
+  <section class="cart">
+    <h2>Your Order</h2>
+    <ul class="cart-list"></ul>
+    <p class="cart-total">Total: ₦0</p>
+    <button class="btn-checkout">Place Order</button>
+  </section>
+</body>
+</html>

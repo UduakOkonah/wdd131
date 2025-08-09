@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunshine Confectionaries</title>
+  <link href="styles/base.css" rel="stylesheet">
+  <link href="styles/small.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="scripts/script.js" defer></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Sunshine Confectionaries logo" width="150" height="80" loading="lazy">
+    </div>
+    <nav class="sidebar">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="order.html">Order</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="floating-icons">
+      <img src="images/pexels-vojtech-okenka-1055272.jpg" class="float1" alt="Cupcake" width="250" height="250" loading="lazy">
+      <img src="images/Black-Forest-Pastry.jpg" class="float2" alt="Cake Slice" width="250" height="250" loading="lazy">
+      <img src="images/gal1.jpg" class="float3" alt="Cookie" width="250" height="250" loading="lazy">
+    </div>
+    
+    <div class="hero-text">
+      <h1 id="greeting">Bringing Warmth to Your Table</h1>
+      <p>Delicious home-cooked meals & freshly baked treats for every occasion.</p>
+      <button class="btn green" onclick="location.href='menu.html'">Explore Menu</button>
+      <button class="btn lemon" onclick="location.href='order.html'">Request Catering</button>
+    </div>
+  </section>
+
+  <!-- Menu Preview Section -->
+  <section class="menu-preview">
+    <h2>Freshly Made, Lovingly Served</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="images/gal1.jpg" alt="Signature Cake" width="300" height="200" loading="lazy">
+        <h3>Signature Cake</h3>
+      </div>
+      <div class="card">
+        <img src="images/gal7.jpg" alt="Chin Chin" width="300" height="200" loading="lazy">
+        <h3>Chin Chin</h3>
+      </div>
+      <div class="card">
+        <img src="images/gal3.jpg" alt="Birthday Cake" width="300" height="200" loading="lazy">
+        <h3>Birthday Cake</h3>
+      </div>
+      <div class="card">
+        <img src="images/gal11.jpg" alt="Butter Cake" width="300" height="200" loading="lazy">
+        <h3>Butter Cake</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Unique Gallery Section -->
+  <section class="gallery">
+    <h2>Our Delicious Moments</h2>
+    <div class="gallery-masonry">
+      <div class="gallery-item">
+        <img src="images/gal2.jpg" alt="Strawberry Cake" width="300" height="200" loading="lazy">
+        <div class="overlay"><span>Strawberry Cake</span></div>
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/gal7.jpg" alt="Golden Chin Chin" width="300" height="400" loading="lazy">
+        <div class="overlay"><span>Golden Chin Chin</span></div>
+      </div>
+      <div class="gallery-item wide">
+        <img src="images/gal6.jpg" alt="Chocolate Layer Cake" width="400" height="200" loading="lazy">
+        <div class="overlay"><span>Chocolate Layer Cake</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/gal1.jpg" alt="Assorted Cupcakes" width="300" height="200" loading="lazy">
+        <div class="overlay"><span>Assorted Cupcakes</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/gal6.jpg" alt="Wedding Cake" width="300" height="200" loading="lazy">
+        <div class="overlay"><span>Wedding Cake</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/gal6.jpg" alt="Wedding Cake" width="300" height="200" loading="lazy">
+        <div class="overlay"><span>Wedding Cake</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/gal6.jpg" alt="Wedding Cake" width="300" height="200" loading="lazy">
+        <div class="overlay"><span>Wedding Cake</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/gal6.jpg" alt="Wedding Cake" width="300" height="200" loading="lazy">
+        <div class="overlay"><span>Wedding Cake</span></div>
+      </div>
+    </div>
+    <button class="btn green" onclick="location.href='gallery.html'">Explore Full Gallery</button>
+  </section>
+
+  <div class="info-sections">
+    <!-- Order & Catering Section -->
+    <section class="order">
+      <h2>Order & Catering</h2>
+      <p>We offer bulk orders, custom cakes, and event catering services to make your celebrations memorable.</p>
+
+      <div class="order-grid">
+        <div class="order-card">
+          <i class="fas fa-box-open order-icon"></i>
+          <h3>Bulk Orders</h3>
+        </div>
+        <div class="order-card">
+          <i class="fas fa-birthday-cake order-icon"></i>
+          <h3>Custom Cakes</h3>
+        </div>
+        <div class="order-card">
+          <i class="fas fa-utensils order-icon"></i>
+          <h3>Event Catering</h3>
+        </div>
+      </div>
+
+      <form id="contactForm">
+        <input type="text" id="name" name="name" placeholder="Name" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <textarea id="message" name="message" placeholder="Message" required></textarea>
+        <button class="btn green" type="submit">Send</button>
+      </form>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>About Sunshine Confectionaries</h2>
+          <p>
+            At Sunshine Confectionaries, every bite tells a story of love and family. 
+            From freshly baked cakes to hearty home-cooked meals, we bring warmth to your table. 
+            Our recipes are inspired by tradition and crafted with passion to make every occasion memorable.
+          </p>
+          <ul class="contact-info">
+            <li>📧 info@sunshineconfectionaries.com</li>
+            <li>📞 +123-456-7890</li>
+            <li>📍 123 Sunshine Blvd, Hometown</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Sunshine Confectionaries Logo" class="footer-logo" width="120" height="60" loading="lazy">
+        <p>Bringing warmth and sweetness to every celebration. Freshly baked, lovingly served.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Order & Catering</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>Email: info@sunshineconfectionaries.com</p>
+        <p>Phone: +123-456-7890</p>
+        <p>Address: 123 Sunshine Blvd, Hometown</p>
+        <div class="footer-socials">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Sunshine Confectionaries | All Rights Reserved</p>
+    </div>
+  </footer>
+</body>
+</html>

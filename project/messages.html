@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages | Sunshine Confectionaries</title>
+  <link rel="stylesheet" href="styles/base.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6f9f4;
+      padding: 40px;
+    }
+    h1 {
+      text-align: center;
+      color: #4CAF50;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background: #4CAF50;
+      color: white;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    .empty {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 1.2rem;
+      color: #777;
+    }
+    .actions {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .btn.clear {
+      background: #e53935;
+      color: white;
+    }
+    .btn.clear:hover {
+      background: #c62828;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Saved Messages</h1>
+
+  <div class="actions">
+    <button class="btn clear" id="clearMessages">Clear All Messages</button>
+  </div>
+
+  <table id="messagesTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Date Submitted</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <p class="empty" id="emptyMsg">No messages yet.</p>
+
+  <script>
+    const messages = JSON.parse(localStorage.getItem('messages')) || [];
+    const tableBody = document.querySelector("#messagesTable tbody");
+    const emptyMsg = document.getElementById("emptyMsg");
+    const clearBtn = document.getElementById("clearMessages");
+
+    function renderMessages() {
+      tableBody.innerHTML = "";
+      if (messages.length === 0) {
+        emptyMsg.style.display = "block";
+        document.getElementById("messagesTable").style.display = "none";
+      } else {
+        emptyMsg.style.display = "none";
+        document.getElementById("messagesTable").style.display = "table";
+        messages.forEach(msg => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${msg.name}</td>
+            <td>${msg.email}</td>
+            <td>${msg.date}</td>
+          `;
+          tableBody.appendChild(row);
+        });
+      }
+    }
+
+    renderMessages();
+
+    clearBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to clear all messages?")) {
+        localStorage.removeItem("messages");
+        location.reload();
+      }
+    });
+
+    // Admin protection (simple)
+    const allowedKey = "sunshineAdmin2025"; // secret key
+    if (!location.hash.includes(allowedKey)) {
+      document.body.innerHTML = "<h2 style='text-align:center;color:red;margin-top:50px'>Access Denied</h2>";
+    }
+  </script>
+
+</body>
+</html>

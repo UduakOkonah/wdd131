@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunshine Confectionaries - Order</title>
+  <link href="styles/base.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/small.css">
+  <link href="styles/order.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- jsPDF for receipt download -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="scripts/order.js" defer></script>
+    <script src="scripts/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="images/logo.png" alt="Sunshine Confectionaries logo"></div>
+    <nav class="sidebar">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="order.html">Order</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+  </header>
+    <main class="order-page">
+    <h1>Place Your Order</h1>
+
+    <!-- Tab Navigation -->
+    <div class="order-tabs">
+        <button class="tab-btn active" data-tab="cart">🛒 Cart Checkout</button>
+        <button class="tab-btn" data-tab="bulk">🎉 Bulk / Event Order</button>
+        <button class="tab-btn" data-tab="custom">🎂 Custom Order</button>
+    </div>
+
+    <div class="delivery-option">
+        <h3>Choose Delivery Option</h3>
+        <label>
+            <input type="radio" name="delivery" value="pickup" checked>
+            🚶 Pickup (₦0)
+        </label><br>
+        <label>
+            <input type="radio" name="delivery" value="delivery">
+            🚚 Delivery (₦1000)
+        </label>
+    </div>
+
+    <!-- ===== Cart Checkout Tab ===== -->
+    <section id="cart" class="tab-content active">
+        <h2>Your Cart</h2>
+        <ul class="cart-list"></ul>
+        <p class="cart-total">Total: ₦0</p>
+
+        <form id="cartForm">
+        <input type="text" id="cartName" placeholder="Full Name" required>
+        <input type="text" id="cartAddress" placeholder="Delivery Address" required>
+        <input type="tel" id="cartPhone" placeholder="Phone Number" required>
+
+        <label for="cartPayment"><strong>Payment Method</strong></label>
+        <select id="cartPayment" required>
+            <option value="">Select Payment Method</option>
+            <option value="cash">💵 Cash on Delivery</option>
+            <option value="bank">🏦 Bank Transfer</option>
+            <option value="mobile">📱 Mobile Payment</option>
+            <option value="card">💳 Card Payment</option>
+        </select>
+
+        <!-- Payment Info Sections -->
+        <div class="payment-info" id="cartBank">
+            <h4>🏦 Bank Transfer Details</h4>
+            <p>Account Name: Sunshine Confectionaries</p>
+            <p>Account Number: 1234567890</p>
+            <p>Bank: First Bank</p>
+        </div>
+
+        <div class="payment-info" id="cartMobile">
+            <h4>📱 Mobile Payment</h4>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Pay+Sunshine+Confectionaries" alt="QR Code">
+            <p>Pay to: +234-987-654-3210</p>
+        </div>
+
+        <div class="payment-info" id="cartCard">
+            <h4>💳 Card Payment</h4>
+            <input type="text" placeholder="Card Number" maxlength="16">
+            <input type="text" placeholder="MM/YY" maxlength="5">
+            <input type="text" placeholder="CVV" maxlength="3">
+            <p class="note">*Demo only. No real payment is processed.*</p>
+        </div>
+
+        <button type="submit" class="btn green">Place Order</button>
+        </form>
+    </section>
+
+    <!-- ===== Bulk Order Tab ===== -->
+    <section id="bulk" class="tab-content">
+        <h2>Bulk / Event Catering</h2>
+        <form id="bulkForm">
+        <input type="text" placeholder="Full Name" required>
+        <input type="text" placeholder="Event Name" required>
+        <input type="date" required>
+        <input type="number" placeholder="Number of Guests" required>
+        <textarea placeholder="Preferred Items / Notes" required></textarea>
+
+        <label for="bulkPayment"><strong>Payment Method</strong></label>
+        <select id="bulkPayment" required>
+            <option value="">Select Payment Method</option>
+            <option value="bank">🏦 Bank Transfer</option>
+            <option value="mobile">📱 Mobile Payment</option>
+            <option value="card">💳 Card Payment</option>
+        </select>
+
+        <!-- Bulk Payment Info -->
+        <div class="payment-info" id="bulkBank">
+            <h4>🏦 Bank Transfer</h4>
+            <p>Sunshine Confectionaries - 1234567890 (First Bank)</p>
+        </div>
+
+        <div class="payment-info" id="bulkMobile">
+            <h4>📱 Mobile Payment</h4>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Pay+Sunshine+Confectionaries" alt="QR Code">
+            <p>Pay to: +234-987-654-3210</p>
+        </div>
+
+        <div class="payment-info" id="bulkCard">
+            <h4>💳 Card Payment</h4>
+            <input type="text" placeholder="Card Number" maxlength="16">
+            <input type="text" placeholder="MM/YY" maxlength="5">
+            <input type="text" placeholder="CVV" maxlength="3">
+        </div>
+
+        <button class="btn lemon" type="submit">Submit Bulk Order</button>
+        </form>
+    </section>
+
+    <!-- ===== Custom Order Tab ===== -->
+    <section id="custom" class="tab-content">
+        <h2>Custom Cake / Special Order</h2>
+        <form id="customForm">
+        <input type="text" placeholder="Full Name" required>
+        <input type="text" placeholder="Cake Flavor (e.g., Vanilla, Chocolate)" required>
+        <input type="text" placeholder="Cake Size (e.g., 10 inches)" required>
+        <input type="text" placeholder="Inscription (Optional)">
+        <input type="file" accept="image/*">
+
+        <label for="customPayment"><strong>Payment Method</strong></label>
+        <select id="customPayment" required>
+            <option value="">Select Payment Method</option>
+            <option value="bank">🏦 Bank Transfer</option>
+            <option value="mobile">📱 Mobile Payment</option>
+            <option value="card">💳 Card Payment</option>
+        </select>
+
+        <!-- Custom Payment Info -->
+        <div class="payment-info" id="customBank">
+            <h4>🏦 Bank Transfer</h4>
+            <p>Sunshine Confectionaries - 1234567890 (First Bank)</p>
+        </div>
+
+        <div class="payment-info" id="customMobile">
+            <h4>📱 Mobile Payment</h4>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Pay+Sunshine+Confectionaries" alt="QR Code">
+            <p>Pay to: +234-987-654-3210</p>
+        </div>
+
+        <div class="payment-info" id="customCard">
+            <h4>💳 Card Payment</h4>
+            <input type="text" placeholder="Card Number" maxlength="16">
+            <input type="text" placeholder="MM/YY" maxlength="5">
+            <input type="text" placeholder="CVV" maxlength="3">
+        </div>
+
+        <button class="btn green" type="submit">Place Custom Order</button>
+        </form>
+    </section>
+
+
+    <!-- ===== Receipt Section ===== -->
+    <section id="receipt-section" style="display:none; margin-top:2rem; border:1px solid #ccc; padding:1rem; border-radius:8px; background:#f9f9f9;">
+        <h2>Receipt</h2>
+        <p><strong>Date:</strong> <span id="receipt-date"></span></p>
+
+        <ul id="receipt-items" style="list-style:none; padding:0; border-top:1px solid #ddd; border-bottom:1px solid #ddd; margin:1rem 0;"></ul>
+
+        <p><strong>Total:</strong> ₦<span id="receipt-total"></span></p>
+        
+        <p><strong>Status:</strong> 
+            <span id="payment-status" style="color: orange; font-weight:bold;">Pending</span>
+        </p>
+        
+        <button id="download-receipt" class="btn green" style="margin-top: 10px;">
+            Download Receipt
+        </button>
+        <button id="mark-paid" class="btn lemon" style="margin-top: 10px;">
+            Mark as Paid
+        </button>
+    </section>
+    </main>
+</body>
+</html>

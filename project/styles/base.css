@@ -1,0 +1,625 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fffdf5;
+  color: #333;
+}
+
+html, body {
+  overflow-x: hidden;   /* hides horizontal scroll */
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;      /* prevent images from overflowing */
+  height: auto;
+}
+
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #fff;
+  border-bottom: 2px solid #4CAF50;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+nav a.active {
+  border-bottom: 2px solid #4CAF50;
+}
+
+/* Hamburger Button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1100;
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  color: #4CAF50;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  background: 
+    linear-gradient(rgba(55, 56, 55, 0.65), rgba(56, 56, 52, 0.55)),
+    url('../images/pastry-wallpaper-hd-1.jpg') center/cover no-repeat;
+}
+
+/* Hero Text */
+.hero-text {
+  max-width: 700px;
+  padding: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.hero-text p {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Floating pastry icons */
+.floating-icons img {
+  position: absolute;
+  width: 60px;
+  opacity: 0.8;
+  border-radius: 50%;
+}
+
+.float1 { top: 20%; left: 5%; animation: float 6s ease-in-out infinite; }
+.float2 { top: 60%; left: 80%; animation: float 7s ease-in-out infinite reverse; }
+.float3 { top: 75%; left: 15%; animation: float 8s ease-in-out infinite; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+/* Wave Divider */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px; /* Increased height for desktop impact */
+  background: url('../images/wave.svg') no-repeat;
+  background-size: 100% 100%; /* Stretch wave to fill width */
+}
+
+
+/* Buttons */
+.hero .btn {
+  padding: 14px 28px;
+  font-size: 1rem;
+  margin: 8px;
+  border-radius: 50px;
+  transition: 0.3s ease;
+}
+
+.hero .btn:hover {
+  transform: scale(1.1);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+.btn {
+  padding: 12px 24px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.green {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.lemon {
+  background-color: #ffe978;
+  color: #333;
+}
+
+
+/* Parent container for the two sections */
+.info-sections {
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+/* Make both sections share space equally */
+.info-sections section {
+  flex: 1;
+  background: #fffdf5;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Order section tweaks */
+.order {
+  background: linear-gradient(to bottom, #fffdf5 0%, #f6f9f4 100%);
+}
+
+/* About section tweaks */
+.about {
+  background: #f6f9f4;
+}
+
+/* Sections */
+section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* ===== Menu Preview Section ===== */
+.menu-preview {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #fffdf5 0%, #f6f9f4 100%);
+}
+
+.menu-preview h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #333;
+  font-family: 'Playfair Display', serif;
+}
+
+.grid {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card h3 {
+  padding: 15px;
+  font-size: 1.2rem;
+  color: #4CAF50;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== Unique Gallery Section ===== */
+.gallery {
+  text-align: center;
+  padding: 70px 20px;
+  background: linear-gradient(to bottom, #fffdf5 0%, #f6f9f4 100%);
+}
+
+.gallery h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #333;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Masonry Layout */
+.gallery-masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 200px;
+  grid-gap: 15px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+/* Overlay Effect */
+.gallery-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+/* Optional: Different Sizes for Masonry Effect */
+.gallery-item.wide {
+  grid-column: span 2;
+}
+
+.gallery-item.tall {
+  grid-row: span 2;
+}
+
+@media (max-width: 480px) {
+  .image-row img {
+    width: 100%;
+  }
+
+  .menu-preview h2,
+  .gallery h2 {
+    font-size: 1.6rem;
+  }
+}
+
+
+/* ===== Order Grid ===== */
+.order-grid {
+  display: flex;
+  justify-content: center; 
+  gap: 40px; 
+  margin-bottom: 40px;
+  flex-wrap: nowrap; 
+}
+
+
+.order-icon {
+  font-size: 3rem;
+  color: #4CAF50;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.order-card:hover .order-icon {
+  transform: scale(1.1);
+}
+
+.order-grid div {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+}
+
+.order-grid h3 {
+  font-size: 1.2rem;
+  color: #4CAF50;
+  margin-bottom: 8px;
+}
+
+.order-grid p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Optional: hover effect on the image only */
+.order-grid img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+
+/* ===== Contact Form Styling ===== */
+#contactForm {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#contactForm input,
+#contactForm textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  transition: 0.3s ease;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+  border-color: #4CAF50;
+  outline: none;
+  box-shadow: 0 0 8px rgba(76,175,80,0.2);
+}
+
+#contactForm textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info li {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-info li::first-letter {
+  font-size: 1.2rem;
+}
+
+
+/* ===== Submit Button ===== */
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+#contactForm button {
+  align-self: flex-end;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 50px;
+  background: #4CAF50;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#contactForm button:hover {
+  background: #43a047;
+  transform: scale(1.05);
+}
+
+/* About Section */
+.about {
+  background: linear-gradient(to bottom, #f6f9f4 0%, #fffdf5 100%);
+  padding: 80px 20px;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  color: #333;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.contact-info img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+
+/* ===== Footer Styling ===== */
+footer {
+  background: #4CAF50;
+  color: #fff;
+  padding-top: 50px;
+  margin-top: 80px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+.footer-brand p {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #f0f0f0;
+}
+
+.footer-logo {
+  width: 120px;
+  border-radius: 50%;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #ffe978;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin: 8px 0;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ffe978;
+}
+
+.footer-contact p {
+  font-size: 0.95rem;
+  margin: 6px 0;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.footer-socials a {
+  font-size: 1.8rem; /* icon size */
+  color: #dae5da;    /* initial color */
+  transition: 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #ffe978;    /* hover color */
+  transform: scale(1.2);
+}
+
+
+/* Footer Bottom Bar */
+.footer-bottom {
+  text-align: center;
+  background: #388e3c;
+  padding: 15px 10px;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+
