@@ -103,34 +103,28 @@ document.getElementById("cartForm").addEventListener("submit", e => {
   e.target.reset();
 });
 
-// ===== Mark Payment as Paid =====
-markPaidBtn?.addEventListener('click', () => {
-  paymentStatus.textContent = 'Paid';
-  paymentStatus.style.color = 'green';
-  alert('✅ Payment marked as PAID!');
-});
-
 // ===== Download Receipt as PDF =====
 downloadBtn?.addEventListener('click', () => {
   const { jsPDF } = window.jspdf;
-  const doc = new jsPDF({ unit: "pt", format: "a5" });
-
+  const doc = new jsPDF({ unit: "pt", format: "a4" });
+  const pageWidth = doc.internal.pageSize.getWidth();
   let y = 40;
 
   // Header
   doc.setFont("courier", "bold").setFontSize(16);
-  doc.text("SUNSHINE CONFECTIONARIES", 105, y, { align: "center" });
+  doc.text("SUNSHINE CONFECTIONARIES", pageWidth / 2, y, { align: "center" });
   y += 20;
 
   doc.setFontSize(10);
-  doc.text("123 Sunshine Blvd, Hometown", 105, y, { align: "center" });
+  doc.text("123 Sunshine Blvd, Hometown", pageWidth / 2, y, { align: "center" });
   y += 12;
-  doc.text("Phone: +234-987-654-3210", 105, y, { align: "center" });
+  doc.text("Phone: +234-987-654-3210", pageWidth / 2, y, { align: "center" });
   y += 12;
-  doc.text("Email: info@sunshineconfectionaries.com", 105, y, { align: "center" });
+  doc.text("Email: info@sunshineconfectionaries.com", pageWidth / 2, y, { align: "center" });
   y += 15;
 
-  doc.setDrawColor(150).setLineDash([2,2],0).line(20, y, 200, y);
+  // Wider line across page with 20pt margin each side
+  doc.setDrawColor(150).setLineDash([2, 2], 0).line(20, y, pageWidth - 20, y);
   y += 15;
 
   // Receipt Info
@@ -139,30 +133,31 @@ downloadBtn?.addEventListener('click', () => {
   doc.text(`Receipt #: ${Math.floor(Math.random() * 100000)}`, 20, y); y += 12;
   doc.text(`Status: ${paymentStatus.textContent}`, 20, y); y += 20;
 
-  // Items Table
+  // Items Table Header
   doc.setFont("courier", "bold");
   doc.text("Item", 20, y);
-  doc.text("Qty", 110, y);
-  doc.text("Price", 180, y, { align: "right" });
+  doc.text("Qty", pageWidth / 2, y, { align: "center" });
+  doc.text("Price", pageWidth - 20, y, { align: "right" });
   y += 10;
 
-  doc.setFont("courier", "normal").setLineDash([2, 2], 0).line(20, y, 200, y);
+  doc.setFont("courier", "normal").setLineDash([2, 2], 0).line(20, y, pageWidth - 20, y);
   y += 10;
 
+  // Items
   receiptItems.querySelectorAll("li").forEach(li => {
     const [itemPart, totalPart] = li.textContent.split(" - ₦");
     const [name, qtyPart] = itemPart.split(" x");
     const qty = qtyPart || "1";
 
     doc.text(name.trim(), 20, y);
-    doc.text(qty, 120, y);
-    doc.text(`₦${totalPart}`, 180, y, { align: "right" });
+    doc.text(qty, pageWidth / 2, y, { align: "center" });
+    doc.text(`₦${totalPart}`, pageWidth - 20, y, { align: "right" });
     y += 14;
   });
 
   // Grand Total
   y += 8;
-  doc.setLineDash([]).line(20, y, 200, y);
+  doc.setLineDash([]).line(20, y, pageWidth - 20, y);
   y += 18;
   doc.setFont("courier", "bold");
   doc.text(`Grand Total: ₦${receiptTotal.textContent}`, 20, y);
@@ -170,11 +165,22 @@ downloadBtn?.addEventListener('click', () => {
   // Footer
   y += 25;
   doc.setFont("courier", "normal").setFontSize(10);
-  doc.text("Thank you for your order!", 105, y, { align: "center" }); y += 12;
-  doc.text("Follow us @SunshineConfectionaries", 105, y, { align: "center" });
+  doc.text("Thank you for your order!", pageWidth / 2, y, { align: "center" }); y += 12;
+  doc.text("Follow us @SunshineConfectionaries", pageWidth / 2, y, { align: "center" });
 
   doc.save('Sunshine_Receipt.pdf');
+
+    // Fade out the receipt after download
+    const receiptSection = document.getElementById("receipt-section");
+    receiptSection.classList.add("fade-out");
+
+    // Hide after fade animation
+    setTimeout(() => {
+        receiptSection.style.display = "none";
+        receiptSection.classList.remove("fade-out");
+    }, 500);
 });
+
 
 // ===== Generic Payment Dropdown Logic =====
 function setupPaymentDropdown(formId) {

@@ -46,13 +46,26 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: #4CAF50;
+  color:#2E7D32;
   font-weight: 600;
 }
+
 
 nav a.active {
   border-bottom: 2px solid #4CAF50;
 }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 
 /* Hamburger Button */
 .menu-toggle {
@@ -167,7 +180,7 @@ nav a.active {
 }
 
 .green {
-  background-color: #4CAF50;
+  background-color: #388E3C;;
   color: white;
 }
 
@@ -260,9 +273,8 @@ h2 {
 .card h3 {
   padding: 15px;
   font-size: 1.2rem;
-  color: #4CAF50;
+  color: #388E3C;
 }
-
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 25px rgba(0,0,0,0.1);
@@ -370,7 +382,7 @@ h2 {
 
 .order-icon {
   font-size: 3rem;
-  color: #4CAF50;
+  color: #388E3C;
   margin-bottom: 10px;
   transition: transform 0.3s ease;
 }
@@ -387,7 +399,7 @@ h2 {
 
 .order-grid h3 {
   font-size: 1.2rem;
-  color: #4CAF50;
+  color: #388E3C;
   margin-bottom: 8px;
 }
 
@@ -426,7 +438,7 @@ h2 {
 
 #contactForm input:focus,
 #contactForm textarea:focus {
-  border-color: #4CAF50;
+  border-color: #388E3C;
   outline: none;
   box-shadow: 0 0 8px rgba(76,175,80,0.2);
 }
@@ -454,7 +466,6 @@ h2 {
   font-size: 1.2rem;
 }
 
-
 /* ===== Submit Button ===== */
 #contactForm {
   display: flex;
@@ -468,7 +479,7 @@ h2 {
   padding: 12px 30px;
   border: none;
   border-radius: 50px;
-  background: #4CAF50;
+  background: #388E3C;
   color: #fff;
   font-size: 1.1rem;
   cursor: pointer;
@@ -536,7 +547,7 @@ h2 {
 
 /* ===== Footer Styling ===== */
 footer {
-  background: #4CAF50;
+  background: #388e3c;
   color: #fff;
   padding-top: 50px;
   margin-top: 80px;
@@ -567,7 +578,7 @@ footer {
 .footer-contact h3 {
   font-size: 1.2rem;
   margin-bottom: 15px;
-  color: #ffe978;
+  color: #fff5b0;
 }
 
 .footer-links ul {
@@ -586,7 +597,7 @@ footer {
 }
 
 .footer-links a:hover {
-  color: #ffe978;
+  color: #fff5b0;
 }
 
 .footer-contact p {
@@ -608,7 +619,7 @@ footer {
 }
 
 .footer-socials a:hover {
-  color: #ffe978;    /* hover color */
+  color: #fff5b0;    /* hover color */
   transform: scale(1.2);
 }
 

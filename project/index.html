@@ -23,7 +23,10 @@
         <li><a href="order.html">Order</a></li>
       </ul>
     </nav>
-    <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+    <button class="menu-toggle">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      <span class="visually-hidden">Toggle menu</span>
+    </button>
   </header>
 
   <!-- Hero Section -->
@@ -47,19 +50,19 @@
     <h2>Freshly Made, Lovingly Served</h2>
     <div class="grid">
       <div class="card">
-        <img src="images/gal1.jpg" alt="Signature Cake" width="300" height="200" loading="lazy">
+        <img src="images/gal1.jpg" alt="Signature-Cake pics" width="300" height="200" loading="lazy">
         <h3>Signature Cake</h3>
       </div>
       <div class="card">
-        <img src="images/gal7.jpg" alt="Chin Chin" width="300" height="200" loading="lazy">
+        <img src="images/gal7.jpg" alt="Chin-Chin pics" width="300" height="200" loading="lazy">
         <h3>Chin Chin</h3>
       </div>
       <div class="card">
-        <img src="images/gal3.jpg" alt="Birthday Cake" width="300" height="200" loading="lazy">
+        <img src="images/gal3.jpg" alt="Birthday-Cake pics" width="300" height="200" loading="lazy">
         <h3>Birthday Cake</h3>
       </div>
       <div class="card">
-        <img src="images/gal11.jpg" alt="Butter Cake" width="300" height="200" loading="lazy">
+        <img src="images/gal11.jpg" alt="Butter-Cake pics" width="300" height="200" loading="lazy">
         <h3>Butter Cake</h3>
       </div>
     </div>
@@ -127,9 +130,15 @@
       </div>
 
       <form id="contactForm">
+        <label for="name" class="visually-hidden">Name</label>
         <input type="text" id="name" name="name" placeholder="Name" required>
+
+        <label for="email" class="visually-hidden">Email</label>
         <input type="email" id="email" name="email" placeholder="Email" required>
+
+        <label for="message" class="visually-hidden">Message</label>
         <textarea id="message" name="message" placeholder="Message" required></textarea>
+
         <button class="btn green" type="submit">Send</button>
       </form>
     </section>
@@ -177,9 +186,15 @@
         <p>Phone: +123-456-7890</p>
         <p>Address: 123 Sunshine Blvd, Hometown</p>
         <div class="footer-socials">
-          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
         </div>
       </div>
     </div>

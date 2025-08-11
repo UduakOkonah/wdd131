@@ -43,7 +43,7 @@
 }
 
 .menu-categories button.active {
-  background: #4CAF50; /* Soft Green */
+  background: #388e3c; /* Soft Green */
   color: white;
 }
 
@@ -79,7 +79,7 @@
 }
 
 .price {
-  color: #4CAF50;
+  color: #388e3c;
   font-weight: 600;
   margin-bottom: 8px;
 }
@@ -100,7 +100,7 @@
 }
 
 .btn-add {
-  background: #4CAF50;
+  background: #388e3c;
   color: white;
   border: none;
   padding: 6px 15px;
@@ -154,12 +154,12 @@
 .cart-total {
   margin: 10px 0;
   font-weight: 600;
-  color: #4CAF50;
+  color: #388e3c;
 }
 
 
 .btn-checkout {
-  background: #4CAF50;
+  background: #388e3c;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -167,7 +167,26 @@
   cursor: pointer;
 }
 .btn-checkout:hover {
-  background: #388E3C;
+  background: #388e3c;
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  margin: 40px 0 20px;
+  color: #388e3c; /* matches footer dark green */
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #4CAF50; /* lighter green accent */
+  margin: 10px auto 0;
+  border-radius: 2px;
 }
 
 

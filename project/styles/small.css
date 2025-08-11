@@ -1,8 +1,9 @@
 /* Responsive Tweaks */
 @media (max-width: 768px) {
   header {
+    display: flex;
     flex-direction: column;
-    text-align: center;
+    gap: 10px;
   }
 
   /* Mobile nav menu */
@@ -10,7 +11,7 @@
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 90px;
     right: 20px;
     background: none;
     padding: 15px;
@@ -22,6 +23,7 @@
 
   .menu-toggle {
     display: block;
+    margin-bottom: 10px;
   }
 
   /* Sidebar style */

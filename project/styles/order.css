@@ -22,7 +22,7 @@ header .logo img {
 
 h1, h2, h3 {
   text-align: center;
-  color: #4CAF50;
+  color: #388e3c;
 }
 
 main {
@@ -47,7 +47,7 @@ main {
   padding: 10px 20px;
   border: none;
   background: #e0f2e9;
-  color: #4CAF50;
+  color: #388e3c;
   cursor: pointer;
   border-radius: 6px;
   font-weight: bold;
@@ -59,7 +59,7 @@ main {
 }
 
 .tab-btn.active {
-  background: #4CAF50;
+  background: #388e3c;
   color: white;
 }
 
@@ -124,7 +124,7 @@ main {
 .cart-total, .order-total {
   font-size: 18px;
   font-weight: bold;
-  color: #4CAF50;
+  color: #388e3c;
   text-align: right;
   margin-top: 15px;
 }
@@ -137,6 +137,24 @@ form {
   margin-top: 15px;
 }
 
+/* Make all form labels aligned left and readable */
+form label {
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+/* Match wave report theme for Delivery Option title */
+.delivery-option h3 {
+  color: #2a8bb8; /* ocean blue shade */
+  font-size: 1.2rem;
+  border-left: 4px solid #2a8bb8;
+  padding-left: 8px;
+}
+
+
 form input, 
 form textarea, 
 form select {
@@ -145,11 +163,12 @@ form select {
   border-radius: 5px;
   font-size: 15px;
   transition: 0.3s;
+  margin-bottom: 15px;
 }
 
 form input:focus,
 form textarea:focus {
-  border-color: #4CAF50;
+  border-color: #388e3c;
   outline: none;
   box-shadow: 0 0 4px rgba(76,175,80,0.4);
 }
@@ -160,7 +179,7 @@ form textarea {
 }
 
 form button {
-  background: #4CAF50;
+  background: #388e3c;
   color: white;
   padding: 12px;
   border: none;
@@ -183,12 +202,12 @@ form button:hover {
     padding: 20px;
     max-width: 400px;
     margin: 2rem auto;
-    font-family: 'Courier New', monospace; /* POS-style font */
+    font-family: 'Courier New', monospace;
     color: #333;
 }
 
 #receipt-section h2 {
-    text-align: center;
+    text-align: right;
     margin-bottom: 10px;
     border-bottom: 2px dashed #444;
     padding-bottom: 5px;
@@ -268,6 +287,21 @@ form button:hover {
 .delivery-option label:hover {
   background-color: rgba(255, 204, 102, 0.2);
 }
+
+.fade-out {
+  animation: fadeOut 0.8s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    padding: 0;
+    margin: 0;
+  }
+}
+
 
 /* ===== Responsive ===== */
 @media (max-width: 600px) {
